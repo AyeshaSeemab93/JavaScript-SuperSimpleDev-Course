@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissor</title>
+</head>
+<body>
+  
+  <p>Boolean Project</p>
+  <h3>Rock Paper Scissor</h3>
+
+<button onclick="
+
+playGame('Rock');
+">Rock</button>
+
+<button onclick="
+// let computerMove = pickComputerMove();
+playGame('Paper');
+">Paper</button>
+
+
+<button onclick="
+// let computerMove = pickComputerMove();
+playGame('Scissor');
+">Scissors</button>
+
+
+  <script>
+    //helper function
+function pickComputerMove(){
+    const randomNumber = Math.random();
+    let computerMove = '';
+    if(computerMove >= 0 && computerMove < 1/3)
+        {
+        computerMove = 'Rock';
+        }
+     else if(computerMove >= 1/3 && computerMove < 2/3)
+        {
+        computerMove = 'Paper';
+        }
+    else if(computerMove >= 1/3 && computerMove < 2/3)
+        {
+        computerMove = 'Paper';
+        }
+     else if(computerMove >= 2/3 && computerMove < 1)
+        {
+        computerMove = 'Scissor';
+        }
+
+    return computerMove;
+}
+function playGame(playerMove){
+    //calling other function inside function:
+    const computerMove = pickComputerMove();
+    let result = '';
+
+    if(playerMove === 'Rock')
+    {
+        if(computerMove === 'Rock')
+        {
+        result = 'Tie';
+        }
+        else if(computerMove === 'Scissor')
+        {
+        result = 'You win';
+        }
+        else if(computerMove === 'Paper')
+        {
+        result = 'You lose';
+        }
+    }
+    else if(playerMove === 'Paper')
+    {
+        if(computerMove === 'Rock')
+        {
+        result = 'You win';
+        }
+        else if(computerMove === 'Paper')
+        {
+        result = 'Tie';
+        }
+        else if(computerMove === 'Scissor')
+        {
+        result = 'You lose';
+        }
+    }
+    else if(playerMove === 'Scissor')
+    {
+        if(computerMove === 'Rock')
+        {
+        result = 'You lose.';
+        }
+        else if(computerMove === 'Scissor')
+        {
+        result = 'Tie!';
+        }
+        else if(computerMove === 'Paper')
+        {
+        result = 'You win!';
+        } 
+    }
+
+
+   alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+
+}
+  </script>
+  
+</body>
+</html>
+
+<!--random number are between 0 to 1 in decimals
+  Rock = 0 to 1/3 
+  Paper = 1/3 to 2/3
+  Scissor = 2/3 to 1
+
+
+  logic of game: 
+  Rock beat Scissor
+  Scissor beat Paper
+  Paper beat rock
+-->
