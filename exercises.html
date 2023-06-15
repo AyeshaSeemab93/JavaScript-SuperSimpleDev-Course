@@ -32,18 +32,63 @@
   // greet('Ayesha'); 
 
   // <!-- 6d -->
-let discount = (age, isholiday) =>{
-if((age <= 6 || age >= 65) && !isholiday)
-{
-  console.log('Discount');
-}
-else{
-  console.log('No Discount');
-}
-}
-discount(89, false);
+// let discount = (age, isholiday) =>{
+// if((age <= 6 || age >= 65) && !isholiday)
+// {
+//   console.log('Discount');
+// }
+// else{
+//   console.log('No Discount');
+// }
+// }
+// discount(89, false);
 
 
+// console.log('hello'.length);
+// console.log('hello'.toLowerCase());
+// console.log('hello'.toUpperCase());
+// console.log(3.0.toString());
+// console.log(true.toString());
+
+
+const object1 = {
+  message: 'hello',
+  size: 7,
+}
+console.log(object1);
+
+const object2 = object1;
+console.log(object2);
+const object3 = {
+  message: 'hello',
+  size: 7,
+}
+console.log(object3 === object1);
+ //false bec references are stored at idfferent places in memory
+console.log(object2 === object1); 
+ // true bec reference to same object in the memory
+
+
+
+//DESTRUCTURING // getting object property out nad storing in variable
+ const object4 = {
+  message: 'hello',
+  size: 7,
+}
+//const message = object4.message;   == 
+const {message} = object4;
+
+console.log(message); // hello
+
+
+
+//shortHand property // storing variable into object
+const n1 = 'Ayesha';
+const person = {
+  // name: n1, ==
+  n1
+}
+console.log(person);
 
   </script>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EX 8J, 8K Coin Flip Game</title>
+</head>
+<body>
+  <button onclick="playGame('Heads'); ">Heads</button>
+  <button onclick="playGame('Tails'); ">Tails</button>
+  <script>
+   //ACCESS THE DATA
+let score =JSON.parse(localStorage.getItem('score')) ||{
+  wins: 0,
+  loses: 0,
+  }
+
+  function playGame(myGuess){
+      let randomNum = Math.random();
+      let guess = myGuess;
+      let computerMove;
+        // console.log(randomNum);
+        computerMove = randomNum < 0.5 ?  'Heads' : 'Tails'
+      //  if(randomNum < 0.5)
+      //  {computerMove = 'Heads';}
+      //  else {computerMove = 'Tails'}
+
+      console.log('computer guess: '+ computerMove)
+      console.log(
+      computerMove  === guess ? 'You win!' : 'You lose!');
+      if(computerMove === guess)
+      {
+        score.wins++;
+      }
+      else{
+        score.loses++;
+      }
+      //STORE DATE
+      localStorage.setItem('score', JSON.stringify(score));
+      
+      console.log(`Wins: ${score.wins}, Loses: ${score.loses}`);
+    }
+  </script>
+</body>
+</html>

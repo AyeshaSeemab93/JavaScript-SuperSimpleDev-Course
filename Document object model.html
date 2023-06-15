@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>Hello</button>
+  <button class="js-button">2nd </button>
+
+  <div> 
+    <p>paragraph</p>
+  </div>
+
+  
+
+
+  <script>
+
+    // console.log(document.title); //give title of this webpage/file
+    // console.log(document.body); //give all code inside body
+    // console.log(document.body.innerHTML);//give all code inside body in writing format
+
+    // document.querySelector('button');
+    // console.log(document.querySelector('button')); // give <button>Hello</button> 
+    console.log(document.querySelector('button').innerHTML); //hello
+//changing the button in JS
+document.querySelector('button').innerHTML = 'moi';
+let buttonElement = document.querySelector('.js-button');
+console.log(buttonElement);
+
+
+
+
+
+    // document.querySelector('div');
+    // console.log(document.querySelector('div'));
+
+  </script>
+</body>
+</html>

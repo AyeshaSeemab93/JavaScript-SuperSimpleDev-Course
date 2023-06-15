@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <button onclick=" product.wins++; localStorage.setItem('product', JSON.stringify(product));; console.log(product.wins); ">Add winners</button>
+  <button onclick="product.wins = 0;localStorage.removeItem('product')  ;console.log(product.wins); ">reset</button>
+  <script>
+   
+  let product =JSON.parse(localStorage.getItem('product')) ||
+     {
+      name: 'Shirt',
+      color: 'Black',
+      'shirt-length': '45cm',
+      measurements: function size(){
+        console.log('Its a function');
+      },
+        wins: 0,
+        loses: 0,
+        ties: 0, 
+    }
+  
+   
+ 
+  console.log('total wins: ' + product.wins +'loses: ' + product.loses);
+
+    
+  
+
+  
+
+
+
+
+
+
+
+    // // JSON
+    // console.log(product);
+    // //JS OBJECT TO JSON 
+    // let jsonObject = JSON.stringify(product);
+    // console.log(jsonObject); 
+    // // function is not included in JSON
+
+    // //JSON TO JavaScript object
+    // console.log(JSON.parse(jsonObject));
+
+
+  //   // LocalStorage
+
+  //   localStorage.setItem('greet', 'hello Ayesha');
+  //  console.log(localStorage.getItem('greet'));
+
+ 
+
+    
+
+  </script>
+</body>
+</html>

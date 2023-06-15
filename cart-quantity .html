@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+  
+</head>
+<body>
+    <h4>Cart Quantity</h4>
+
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);">Show Quantity</button>
+
+    <button onclick="updateCartQuantity(1)">Add to cart</button>
+
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <p>
+      <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+      <button onclick=" cartQuantity -=2; console.log(`Cart Quantity: ${cartQuantity}`)">-2</button>
+      <button onclick=" cartQuantity -=3; console.log(`Cart Quantity: ${cartQuantity}`)">-3</button>
+
+    </p>
+    
+
+    <button onclick="cartQuantity = 0;console.log(`Cart was reset.Cart Quantity: ${cartQuantity}`);
+    ">Reset cart</button>
+
+
+
+
+
+
+
+  <script>
+
+      let cartQuantity = 0;
+      function updateCartQuantity(quantity) {
+       
+        if(cartQuantity + quantity > 10 )
+        {
+          alert("The cart is full!");
+          return;
+        }
+
+         if(cartQuantity + quantity < 0)
+        { 
+        
+          alert("Not enough items in the cart!"); 
+          return;
+        }
+       
+          cartQuantity +=quantity;
+          console.log(`Cart Quantity: ${cartQuantity}`);
+
+      }
+      const product1 = {
+       name: 'basketball',
+       price: 2095
+      }
+     const product2 = {
+      name: 'shirt',
+      price: 2000.
+     }
+     const product3 = {
+       name: 'basketball',
+       price: 2095
+      }
+     function comparePrice(product1, product2){
+      if(product1.price < product2.product2)
+      {
+        return product1;
+      }
+      else return product2;
+     }
+     const cheapProduct = comparePrice(product1, product2);
+     console.log(cheapProduct);
+
+     let isSameProduct = (product1, product2) =>{
+if(product1.name === product2.name && product1.price === product2.price)
+{
+  return true;
+}
+else return false;
+     }
+    console.log( isSameProduct(product1, product3));
+  
+  </script>
+
+
+</body>
+</html>
