@@ -20,24 +20,22 @@
     <button onclick="updateCartQuantity(5)">+5</button>
     <p>
       <button onclick="updateCartQuantity(-1)">Remove from cart</button>
-      <button onclick=" cartQuantity -=2; console.log(`Cart Quantity: ${cartQuantity}`)">-2</button>
-      <button onclick=" cartQuantity -=3; console.log(`Cart Quantity: ${cartQuantity}`)">-3</button>
-
+      <button onclick=" updateCartQuantity(-2); showCartQuanity(cartQuantity);">-2</button>
+      <button onclick=" updateCartQuantity(-3); showCartQuanity(cartQuantity);">-3</button>
+      <button onclick="cartQuantity = 0;console.log(`Cart was reset.Cart Quantity: ${cartQuantity}`);showCartQuanity(cartQuantity);
+      ">Reset cart</button>
     </p>
+    <p class="js-preview"></p>
     
-
-    <button onclick="cartQuantity = 0;console.log(`Cart was reset.Cart Quantity: ${cartQuantity}`);
-    ">Reset cart</button>
-
-
-
-
-
-
-
   <script>
+   function showCartQuanity(cartQuantity){
+    //show  cart quanity on page in p tag
+    document.querySelector('.js-preview').innerHTML = `Cart Quantity: ${cartQuantity}`;
+   }
 
       let cartQuantity = 0;
+      showCartQuanity(0);
+     
       function updateCartQuantity(quantity) {
        
         if(cartQuantity + quantity > 10 )
@@ -55,8 +53,11 @@
        
           cartQuantity +=quantity;
           console.log(`Cart Quantity: ${cartQuantity}`);
-
+      //show updated cart quanity on page in p tag
+      showCartQuanity(cartQuantity);
       }
+
+
       const product1 = {
        name: 'basketball',
        price: 2095
@@ -69,6 +70,7 @@
        name: 'basketball',
        price: 2095
       }
+
      function comparePrice(product1, product2){
       if(product1.price < product2.product2)
       {
@@ -76,16 +78,18 @@
       }
       else return product2;
      }
+
+
      const cheapProduct = comparePrice(product1, product2);
      console.log(cheapProduct);
 
-     let isSameProduct = (product1, product2) =>{
-if(product1.name === product2.name && product1.price === product2.price)
-{
-  return true;
-}
-else return false;
-     }
+      let isSameProduct = (product1, product2) =>{
+        if(product1.name === product2.name && product1.price === product2.price)
+        {
+          return true;
+        }
+        else return false;
+      }
     console.log( isSameProduct(product1, product3));
   
   </script>

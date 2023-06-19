@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 9d</title>
+</head>
+<body>
+  <input type="text" placeholder="Name" class="js-input"">
+<button onclick="showName();">Submit</button>
+  <p class="js-name"></p>
+
+  <script>
+
+    function showName(){
+      let inputElement = document.querySelector('.js-input').value;
+      document.querySelector('.js-name').innerHTML = `Your name is ${inputElement}`;
+    }
+
+  </script>
+</body>
+</html>

@@ -4,34 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Projects</title>
-  <style>
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .subscribe-button{
-      color: white;
-      background-color: black;
-      border: none;
-      font-weight: 700;
-      padding: 0.6rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      margin-bottom: 2rem;
-    }
-    .is-subscribed{
-      background-color: #F0F0F0;
-      color: black;
-    }
-    .cost-input{
-      
-    }
-    
-  </style>
+  <title>Exercise 9g</title>
 </head>
 <body>
   <p>YouTube Subscribe Button</p>
-  <button class="js-subscribe-button subscribe-button" onclick=" subscribe();" >Subscibe</button> 
+  <button onclick=" subscribe();" class="js-subscribe-button">Subscibe</button> 
 
 
 
@@ -40,7 +17,7 @@
   <p>Amazon Shipping Calculator</p>
   <p>Order under $40 = +$10 shipping</p>
   <p>Order over $40 = FREE shipping</p>
-  <input  type="text" placeholder=" Cost of order" class="js-input cost-input" onkeydown="handleCostKeydown(event);">
+  <input  type="text" placeholder=" Cost of order" class="js-input" onkeydown="handleCostKeydown(event);">
  
   <button onclick=" costCalculator();">Calculate</button>
   <p class="js-totalcost"></p>
@@ -53,13 +30,10 @@
       const buttonElement= document.querySelector('.js-subscribe-button');
       if(buttonElement.innerHTML === 'Subscibe')
       {
-        buttonElement.innerHTML = 'Subscibed'; //button is pressed now
-        //adding class to give css to pressed button
-        buttonElement.classList.add('is-subscribed');
+        buttonElement.innerHTML = 'Subscibed';
       }
       else{
         buttonElement.innerHTML = 'Subscibe';
-        buttonElement.classList.remove('is-subscribed');
           }
     }
 
@@ -67,15 +41,18 @@
 
     function costCalculator(){
       const inputElement = document.querySelector('.js-input');
-    const cost = Number(inputElement.value); //converting string to number
-  
+    let cost = Number(inputElement.value); //converting string to number
+    //converting euros to cents
+  cost = cost * 100;
     let totalcost = 0;
-      if(cost >  40){
+      if(cost >  4000){
        totalcost = cost;
       }
-      else if(cost < 40){
-      totalcost = cost + 10;
+      else if(cost < 4000){
+      totalcost = cost + 1000;
       }
+      //converting totalcost back from cents to euros:
+      totalcost = totalcost / 100;
       document.querySelector('.js-totalcost').innerHTML = `$${totalcost}`;
 
     }
