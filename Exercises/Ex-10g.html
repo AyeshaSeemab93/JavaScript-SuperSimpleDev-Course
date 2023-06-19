@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    button{
+      background-color: black;
+      color: white;
+      font-size: 20px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      
+    }
+    .is-toggled{
+      background-color: gainsboro;
+      color: black;
+      }
+  </style>
+</head>
+<body>
+  <button class="js-gaming-button" onclick="toggle('.js-gaming-button');">Gaming</button>
+  <button class="js-music-button" onclick="toggle('.js-music-button');">Music</button>
+  <button class="js-tech-button" onclick="toggle('.js-tech-button');">Tech</button>
+
+  <script>
+    function toggle(selector) {
+      const buttonElement = document.querySelector(selector);
+      if(!buttonElement.classList.contains('is-toggled')){
+        //turn off all the buttons first
+        turnOffOtherButtons()
+        buttonElement.classList.add('is-toggled');
+      }
+      else
+      {
+        buttonElement.classList.remove('is-toggled');
+      }
+    }
+    function turnOffOtherButtons(){
+      const allButtons = document.querySelector('.is-toggled');
+    
+      if(allButtons)
+      {
+        allButtons.classList.remove('is-toggled');
+      }
+      
+    }
+
+  </script>
+</body>
+</html>

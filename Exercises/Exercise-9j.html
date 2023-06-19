@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise-8h-Calculator</title>
+  <style>
+    body{
+      margin-left: 2rem;
+
+    }
+    button{
+      font-size: 2rem;
+margin-right: 0.5rem;
+padding: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<p class="js-preview"></p>
+
+  <p>
+    <button onclick="updateCalculations('1');">1</button>
+    <button onclick="updateCalculations('2');">2</button>
+    <button onclick="updateCalculations('3');">3</button>
+    <button onclick="updateCalculations(' + ');">+</button>
+  </p>
+  <p>
+    <button onclick="updateCalculations('4');">4</button>
+    <button onclick="updateCalculations('5');">5</button>
+    <button onclick="updateCalculations('6');">6</button>
+    <button onclick="updateCalculations(' - ');">-</button>
+  </p>
+  <p>
+    <button onclick="updateCalculations('7');">7</button>
+    <button onclick="updateCalculations('8');">8</button>
+    <button onclick="updateCalculations('9');">9</button>
+    <button onclick="updateCalculations(' * ');">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculations('0')">0</button>
+    <button onclick="updateCalculation('.');">.</button>
+
+
+    <button onclick=" 
+    calculations = eval(calculations); 
+     //storing data where calculations happen
+      localStorage.setItem('calculations', JSON.stringify(calculations));
+     console.log(calculations);
+     displayCalculations();
+     ">=</button>
+
+
+    <button onclick="updateCalculations(' / ');">/</button>
+  </p>
+  
+  <BUtton onclick="calculations = '';     //storing data
+  localStorage.setItem('calculations', JSON.stringify(calculations));">Clear</BUtton>
+
+
+  <script> 
+ 
+
+     let calculations = JSON.parse(localStorage.getItem('calculations')) ||
+     '';
+     //display calculations when page first load
+      displayCalculations();
+
+
+    const updateCalculations = (input) => {
+      calculations = calculations + input;  // this is just adding two strings, not calculations
+      displayCalculations();
+      //storing data
+      localStorage.setItem('calculations', JSON.stringify(calculations));
+    }
+
+    function displayCalculations () {
+    document.querySelector('.js-preview')
+      .innerHTML = calculations;
+  }
+   
+  </script>
+  
+</body>
+</html>
