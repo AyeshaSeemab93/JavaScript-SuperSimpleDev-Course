@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise-8h-Calculator</title>
+  <style>
+    body{
+      margin-left: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+
+
+    }
+    .calculations{
+      color: white;
+        font-size: 45px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    button{
+      background-color: #333333;
+      color: white;
+      height: 60px;
+      width: 60px;
+      border-radius: 60px;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      margin-right: 5px;
+      }
+      .plus{
+        padding: 0;
+        padding-top: 13px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+      border-radius: 50px;
+      background-color:   #FEA00A;
+      }
+      .minus{
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+      border-radius: 50px;
+      background-color:   #FEA00A;
+      }
+
+      .multiply{
+        padding: 0;
+        padding-top: 17px;
+        padding-bottom: 6px;
+        padding-left: 25px;
+        padding-right: 25px;
+      border-radius: 50px;
+      background-color:   #FEA00A;
+      }
+      .divide { 
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 50px;
+        background-color:   #FEA00A;
+      }
+      .clear-button{
+        font-size: 1rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 60px;
+      }
+    </style>
+</head>
+<body>
+<p class="js-preview calculations"></p>
+
+  <p>
+    <button onclick="updateCalculations('1');">1</button>
+    <button onclick="updateCalculations('2');">2</button>
+    <button onclick="updateCalculations('3');">3</button>
+    <button onclick="updateCalculations(' + ');" class="plus">+</button>
+  </p>
+  <p>
+    <button onclick="updateCalculations('4');">4</button>
+    <button onclick="updateCalculations('5');">5</button>
+    <button onclick="updateCalculations('6');">6</button>
+    <button onclick="updateCalculations(' - ');" class="minus">-</button>
+  </p>
+  <p>
+    <button onclick="updateCalculations('7');">7</button>
+    <button onclick="updateCalculations('8');">8</button>
+    <button onclick="updateCalculations('9');">9</button>
+    <button onclick="updateCalculations(' * ');" class="multiply">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculations('0')">0</button>
+    <button onclick="updateCalculations('.');">.</button>
+
+
+    <button onclick=" 
+    calculations = eval(calculations); 
+     //storing data where calculations happen
+      localStorage.setItem('calculations', JSON.stringify(calculations));
+     console.log(calculations);
+     displayCalculations();
+     ">=</button>
+
+
+    <button onclick="updateCalculations(' / ');" class="divide">/</button>
+  </p>
+  
+  <BUtton onclick="calculations = '';  displayCalculations () ;  //storing data
+  localStorage.setItem('calculations', JSON.stringify(calculations));" class="clear-button">Clear</BUtton>
+
+
+  <script> 
+ 
+
+     let calculations = JSON.parse(localStorage.getItem('calculations')) ||
+     '';
+     //display calculations when page first load
+      displayCalculations();
+
+
+    const updateCalculations = (input) => {
+      calculations = calculations + input;  // this is just adding two strings, not calculations
+      displayCalculations();
+      //storing data
+      localStorage.setItem('calculations', JSON.stringify(calculations));
+    }
+
+    function displayCalculations () {
+    document.querySelector('.js-preview')
+      .innerHTML = calculations;
+  }
+   
+  </script>
+  
+</body>
+</html>
