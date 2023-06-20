@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11-l</title>
+</head>
+<body>
+
+  <script>
+    let array1 = [1,-3,5];
+    let array2 = [-2, 3, -5, 7, 10];
+   
+
+    function minMax(num){
+     let obj = {
+      min: 0,
+      max: 0
+     }
+  
+      for(let i = 0; i< num.length; i++)
+      {
+        if(num[i] < obj.min)
+        {
+          obj.min = num[i]
+        }
+        if(num[i] > obj.max)
+        {
+          obj.max = num[i]
+        }
+      }
+      console.log(obj);
+    }
+
+    
+  minMax(array1);
+  minMax(array2);
+
+    
+    
+ 
+  
+
+  </script>
+</body>
+</html>
