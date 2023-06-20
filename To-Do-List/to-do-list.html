@@ -5,12 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To DO LIST</title>
+  <link rel="stylesheet" href="./to-do-list.css">
 </head>
 <body>
 <p>Todo List Practice</p>
-<input class="js-input-name" type="text" placeholder="Todo name">
-<button onclick="addToDoList();">Add</button>
-<div class="js-list"></div>
+<div class="todo-input-grid">
+
+  <input class="js-input-name input-name" type="text" placeholder="Todo name">
+  <input class = "js-input-date input-date"type="date">
+  <button class="add-button" onclick="addToDoList();">Add</button>
+  
+</div>
+
+<div class="js-list todo-grid"></div>
 
   <script src="./to-do-list.js"></script>
   
@@ -24,4 +31,17 @@
 
 3: go through input-array and add p tag around every input(use loop)
 4: add all the p tagged html in a string( in same loop)
-5:  show html string in a div on screen -->
+5:  show html string in a div on screen
+
+//Add delete button
+5: add the Delete button along with generating html inside p tag give onclick to delete the list item
+6: display the updated list on site by removing the deleted task
+
+
+
+
+
+
+
+-->
+

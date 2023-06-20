@@ -1,0 +1,40 @@
+body{
+  font-family: Arial;
+  font-size: 15px;
+}
+.todo-grid,
+.todo-input-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px ;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items:center;
+ 
+}
+.todo-input-grid{
+  margin-bottom: 10px;
+}
+ .input-name
+{
+  height: 25px;
+
+} 
+ .input-date{
+  height: 27px;
+
+} 
+.add-button,
+.delete-button{
+  background-color: #007700;
+  
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+ 
+}
+.delete-button{
+  background-color: #7B0000;
+ 
+  
+}
