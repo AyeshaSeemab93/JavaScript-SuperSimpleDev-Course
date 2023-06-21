@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11-s</title>
+</head>
+<body>
+
+  <script>
+ //Method 1: Making new array with modifications
+const food = ['egg','apple','egg','egg', 'ham'];
+const newList = []
+let count = 0;
+function removeEgg(food){
+      for(let i = 0; i <food.length; i++)
+      {
+        if(food[i] === 'egg')
+        {
+          count++;
+          if(count < 2)
+          {
+            continue; //skip/ remove the egg and move on.
+          }
+          
+        }  
+          newList.push(food[i])
+       
+      }
+     
+   }
+
+
+   //Method 2: Modifying the same array
+   
+//  removeEgg(food);
+//  console.log(newList);
+
+// let count = 0;  
+// function removeEgg(food){
+//       for(let i = 0; i <food.length; i++)
+//       {
+//         if(food[i] === 'egg')
+//         {
+//           count++;
+//           if(count < 2)
+//           {
+//             food.splice(i, 1); //remove 1 value from index 1
+//           }
+          
+//         }  
+ 
+       
+//       }
+     
+//    }
+//    removeEgg(food);
+//  console.log(food);
+   
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11-u</title>
+</head>
+<body>
+
+  <script>
+ //Method 1: Making new array with modifications
+const food = ['egg','apple','egg','egg', 'ham'];
+
+let count = 0;
+
+function removeEgg(food){
+
+  let foodCopy = food.slice().reverse();
+  const newList = []
+
+      for(let i = 0; i <foodCopy.length; i++)
+      {
+        if(foodCopy[i] === 'egg' && count < 2 )
+        {
+          count++;
+          continue; //skip/ remove the egg and move on. 
+        }  
+          newList.push(foodCopy[i])
+       
+      }
+      return newList.reverse(); 
+   }
+
+   console.log(removeEgg(food));
+   console.log(food);
+
+
+
+   
+
+  </script>
+</body>
+</html>

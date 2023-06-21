@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11-t</title>
+</head>
+<body>
+
+  <script>
+ //Method 1: Making new array with modifications
+// const food = ['egg','apple','egg','egg', 'ham'];
+
+//  food.reverse();
+// console.log(food);
+// const newList = []
+// let count = 0;
+// function removeEgg(food){
+//       for(let i = 0; i <food.length; i++)
+//       {
+       
+//         if(food[i] === 'egg' && count < 2 )
+//         {
+//           count++;
+//           continue; //skip/ remove the egg and move on. 
+//         }  
+//           newList.push(food[i])
+       
+//       }
+//       return newList.reverse();
+     
+//    }
+//    console.log(removeEgg(food));
+
+
+
+ 
+   //Method 2: Modifying the same array
+   
+ 
+const food = ['egg','apple','egg','egg', 'ham'];
+food.reverse();
+let removalCount = 0;  
+function removeEgg(food){
+      for(let i = 0; i <food.length; i++)
+      {
+        if(food[i] === 'egg' & removalCount < 2 )
+        {
+          removalCount++;
+          food.splice(i, 1); //remove 1 value from index 1
+        }  
+      }
+     return food.reverse(); //reversing the final array as well to get required result
+   }
+  
+ console.log( removeEgg(food));
+   
+
+  </script>
+</body>
+</html>

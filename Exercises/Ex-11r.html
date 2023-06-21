@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11-r</title>
+</head>
+<body>
+
+  <script>
+
+const food = ['egg','apple','egg','egg', 'egg', 'ham'];
+const newList = []
+function removeEgg(food){
+      for(let i = 0; i <food.length; i++)
+      {
+        if(food[i] === 'egg')
+        {
+          continue; //skip/ remove the egg and move on.
+        }  
+newList.push(food[i])
+       
+      }
+     
+   }
+ removeEgg(food);
+ console.log(newList);
+  
+  
+   
+
+  </script>
+</body>
+</html>
