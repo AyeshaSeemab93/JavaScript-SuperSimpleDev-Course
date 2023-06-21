@@ -1,4 +1,7 @@
-
+document.querySelector('.js-add-button')
+.addEventListener('click', () =>{
+  addToDoList();
+})
   const inputArray = 
   [   {
         name: 'make dinner',
@@ -15,29 +18,40 @@ renderToDoList();
 //add all the p tagged html in a string and show it in a div
 function renderToDoList(){
   let allHTML = ''; // collecting all generated html in a string
- 
-   for(let i = 0; i<inputArray.length; i++){
+//  can use for loop as well instead of for
+  inputArray.forEach((todoobject, i)=>{
     // console.log(inputArray[i]);
-
-      const todoobject = inputArray[i];
     // const name = todoobject.name;
     // const dueDate = todoobject.dueDate;
       const {name, dueDate} = todoobject;
 
     //Generating HTML using JS:
-  let html = `
+    let html = `
             <div>${name}</div>
             <div>${dueDate}</div>               
             <button class ="delete-button" 
-            onclick="inputArray.splice(${i},1);  
-            //deleting the todo item and redispaying the updated list
-            renderToDoList();"> Delete</button>`;
+   //         onclick="
+  // inputArray.splice(${i},1);  
+  // renderToDoList();
+            "> Delete</button>`;
             // adding input on page 1 by 1 in p tag
 
-  allHTML += html;
-}
+    allHTML += html;
+  });
+
   console.log(allHTML);
   document.querySelector('.js-list').innerHTML = allHTML;
+
+//for all delete buttons: querrySelectorAll, foreach for each button event
+document.querySelectorAll('.delete-button')
+  .forEach((deleteButtonValue, index)=>{
+      deleteButtonValue.addEventListener('click', ()=>{
+      inputArray.splice(index,1);  
+      //deleting the todo item and redispaying the updated list
+      renderToDoList();
+      })
+      })
+
    
 }
 //just add input in array and make it empty
