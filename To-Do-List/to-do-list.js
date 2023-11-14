@@ -41,7 +41,6 @@ function renderToDoList(){
 
   console.log(allHTML);
   document.querySelector('.js-list').innerHTML = allHTML;
-
 //for all delete buttons: querrySelectorAll, foreach for each button event
 document.querySelectorAll('.delete-button')
   .forEach((deleteButtonValue, index)=>{
@@ -51,6 +50,7 @@ document.querySelectorAll('.delete-button')
       renderToDoList();
       })
       })
+
 
    
 }
