@@ -1,5 +1,4 @@
 # JavaScript-SuperSimpleDev-Course
-# JavaScript SuperSimpleDev Course
 
 ## Overview
 
