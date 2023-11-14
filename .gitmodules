@@ -1,3 +1,7 @@
 [submodule "Calculator-using-JavaScript"]
 	path = Calculator-using-JavaScript
 	url = https://github.com/AyeshaSeemab93/Calculator-using-JavaScript
+	
+[submodule "javascript-amazon-project"]
+    path = javascript-amazon-project
+    url = https://github.com/AyeshaSeemab93/Amazon-project-using-JavaScript.git
